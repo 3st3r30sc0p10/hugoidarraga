@@ -38,6 +38,12 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /hugoidarraga
 
+      - name: Fix permissions
+        run: |
+          chmod -c -R +rX "out/" | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
