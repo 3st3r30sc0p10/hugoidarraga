@@ -1,4 +1,4 @@
-# Personal Portfolio
+## Personal Portfolio
 
 A modern, responsive portfolio website built with Next.js and TailwindCSS.
 
@@ -15,8 +15,8 @@ A modern, responsive portfolio website built with Next.js and TailwindCSS.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/portfolio.git
-cd portfolio
+git clone https://github.com/3st3r30sc0p10/hugoidarraga.git
+cd hugoidarraga
 ```
 
 2. Install dependencies:
@@ -31,7 +31,7 @@ npm install
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open http://localhost:3000 with your browser to see the result.
 
 ## Customization
 
@@ -43,7 +43,9 @@ npm run dev
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages when changes are pushed to the main branch. To deploy manually:
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch. The site will be available at: https://3st3r30sc0p10.github.io/hugoidarraga/
+
+To deploy manually:
 
 1. Build the site:
 

@@ -86,7 +86,7 @@ export default function Home() {
           <div className="max-w-xl mx-auto">
             <div className="flex justify-center space-x-6">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/3st3r30sc0p10/hugoidarraga"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
