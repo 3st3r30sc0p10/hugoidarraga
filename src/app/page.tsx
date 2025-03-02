@@ -1,116 +1,111 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
-      
-      {/* Hero Section */}
-      <section id="hero" className="pt-20 pb-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto mt-16 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white">
-            Hi, I'm <span className="text-blue-600">Your Name</span>
-          </h1>
-          <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
-            Full Stack Developer | Open Source Enthusiast
-          </p>
-          <div className="mt-8">
-            <a
-              href="#contact"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Get in Touch
-            </a>
-          </div>
-        </div>
+    <main className="max-w-2xl mx-auto px-4 py-8">
+      <header className="mb-12">
+        <h1 className="text-3xl font-bold mb-4">Hugo Idarraga</h1>
+        <p className="text-lg text-gray-600">
+          Digital Humanities | Minimal Computing | Web Development
+        </p>
+      </header>
+
+      <nav className="mb-12">
+        <ul className="flex space-x-6">
+          <li>
+            <a href="#about" className="hover:underline">About</a>
+          </li>
+          <li>
+            <a href="#work" className="hover:underline">Work</a>
+          </li>
+          <li>
+            <a href="#contact" className="hover:underline">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="about" className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">About</h2>
+        <p className="mb-4">
+          I focus on minimal computing approaches in digital humanities, creating sustainable 
+          and accessible digital solutions. My work emphasizes simplicity, durability, and 
+          minimal use of computing resources.
+        </p>
+        <p>
+          Through careful consideration of technical choices and their implications, 
+          I strive to make digital humanities projects more accessible and sustainable.
+        </p>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
-            About Me
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto">
-            A passionate developer with experience in building web applications.
-            I love creating elegant solutions to complex problems.
-          </p>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            My Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Add your project cards here */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                Project 1
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Description of your first project.
+      <section id="work" className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">Selected Work</h2>
+        <ul className="space-y-6">
+          <li>
+            <article>
+              <h3 className="text-xl font-semibold mb-2">Minimal Computing Framework</h3>
+              <p className="text-gray-600 mb-2">
+                A lightweight framework for creating sustainable digital humanities projects
+                with minimal resource requirements.
               </p>
-            </div>
-            {/* Add more project cards as needed */}
-          </div>
-        </div>
+              <a href="https://github.com/3st3r30sc0p10/hugoidarraga" 
+                 className="inline-block hover:underline"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View Project →
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h3 className="text-xl font-semibold mb-2">Digital Archive Platform</h3>
+              <p className="text-gray-600 mb-2">
+                A sustainable approach to digital archiving, focusing on long-term 
+                preservation and accessibility.
+              </p>
+              <a href="#" className="inline-block hover:underline">
+                Learn More →
+              </a>
+            </article>
+          </li>
+        </ul>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            Skills
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {/* Add your skills here */}
-            <div className="text-center">
-              <div className="text-4xl mb-2">💻</div>
-              <h3 className="font-semibold text-gray-900 dark:text-white">Web Development</h3>
-            </div>
-            {/* Add more skills as needed */}
-          </div>
-        </div>
+      <section id="contact" className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">Contact</h2>
+        <p className="mb-4">
+          I'm interested in collaborating on projects that emphasize minimal computing 
+          and sustainable digital humanities practices.
+        </p>
+        <ul className="space-y-2">
+          <li>
+            <a href="https://github.com/3st3r30sc0p10/hugoidarraga"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="hover:underline">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="mailto:your.email@example.com"
+               className="hover:underline">
+              Email
+            </a>
+          </li>
+        </ul>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
-            Get in Touch
-          </h2>
-          <div className="max-w-xl mx-auto">
-            <div className="flex justify-center space-x-6">
-              <a
-                href="https://github.com/3st3r30sc0p10/hugoidarraga"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="mailto:your.email@example.com"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-              >
-                Email
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <footer className="text-sm text-gray-600">
+        <p>
+          Built with minimal computing principles. 
+          <a href="https://github.com/3st3r30sc0p10/hugoidarraga" 
+             target="_blank"
+             rel="noopener noreferrer"
+             className="ml-1 hover:underline">
+            View Source
+          </a>
+        </p>
+      </footer>
     </main>
   );
 }
