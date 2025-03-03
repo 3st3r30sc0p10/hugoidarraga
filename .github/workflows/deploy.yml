@@ -29,6 +29,8 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
 
       - name: Install dependencies
         run: |
@@ -38,8 +40,11 @@ jobs:
       - name: Build with Next.js
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /hugoidarraga
+          NEXT_PUBLIC_BASE_PATH: ''
           NODE_ENV: production
+
+      - name: Create CNAME file
+        run: echo "hugoidarraga.com" > ./out/CNAME
 
       - name: Fix permissions
         run: |
