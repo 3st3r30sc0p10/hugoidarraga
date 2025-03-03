@@ -28,7 +28,7 @@ const projects: ProjectData[] = [
       },
       {
         type: "video",
-        url: "/projects/becoming/becoming-001.mp4",
+        url: "/projects/becoming/becoming-001-compressed.mp4",
         thumbnail: "/projects/becoming/becoming-001-thumbnail.jpg",
         title: "Amerindian Defiance of Machine Learning Classification"
       },
