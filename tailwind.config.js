@@ -7,11 +7,27 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      },
       colors: {
+        accent: 'var(--accent-color)',
+        dark: 'var(--dark-color)',
         gray: {
-          600: 'var(--text-secondary)',
-          900: 'var(--text-primary)',
+          dark: '#b1a7a6',
+          medium: '#d3d3d3',
+          light: '#f5f3f4',
         },
+        white: '#ffffff',
+      },
+      backgroundColor: {
+        primary: 'var(--background-primary)',
+        secondary: 'var(--background-secondary)',
+      },
+      textColor: {
+        primary: 'var(--text-primary)',
+        secondary: 'var(--text-secondary)',
+        accent: 'var(--text-accent)',
       },
       maxWidth: {
         '2xl': '42rem',
@@ -33,7 +49,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
   // Reduce the file size by removing unused utilities
   purge: {
     enabled: process.env.NODE_ENV === 'production',

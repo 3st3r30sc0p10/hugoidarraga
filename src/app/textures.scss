@@ -1,0 +1,129 @@
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.texture-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.08;
+    --s: 16px; /* control the size */
+    --c1: #{rgba(229, 56, 59, 0.9)}; /* primary red */
+    --c2: #{rgba(229, 56, 59, 0.6)}; /* medium red */
+    --c3: #{rgba(229, 56, 59, 0.3)}; /* light red */
+    
+    background:
+      /* Primary winding lines */
+      linear-gradient(142deg,
+        transparent 0%,
+        transparent 40%,
+        var(--c1) 40%,
+        var(--c1) 41%,
+        transparent 41%,
+        transparent 60%,
+        var(--c1) 60%,
+        var(--c1) 61%,
+        transparent 61%,
+        transparent 100%
+      ),
+      linear-gradient(128deg,
+        transparent 20%,
+        transparent 40%,
+        var(--c1) 40%,
+        var(--c1) 41%,
+        transparent 41%,
+        transparent 80%,
+        var(--c1) 80%,
+        var(--c1) 81%,
+        transparent 81%,
+        transparent 100%
+      ),
+      /* Secondary winding lines */
+      linear-gradient(72deg,
+        transparent 10%,
+        transparent 30%,
+        var(--c2) 30%,
+        var(--c2) 31%,
+        transparent 31%,
+        transparent 70%,
+        var(--c2) 70%,
+        var(--c2) 71%,
+        transparent 71%,
+        transparent 100%
+      ),
+      linear-gradient(38deg,
+        transparent 15%,
+        transparent 35%,
+        var(--c2) 35%,
+        var(--c2) 36%,
+        transparent 36%,
+        transparent 75%,
+        var(--c2) 75%,
+        var(--c2) 76%,
+        transparent 76%,
+        transparent 100%
+      ),
+      /* Tertiary winding lines */
+      linear-gradient(108deg,
+        transparent 25%,
+        transparent 45%,
+        var(--c3) 45%,
+        var(--c3) 46%,
+        transparent 46%,
+        transparent 85%,
+        var(--c3) 85%,
+        var(--c3) 86%,
+        transparent 86%,
+        transparent 100%
+      ),
+      linear-gradient(162deg,
+        transparent 5%,
+        transparent 25%,
+        var(--c3) 25%,
+        var(--c3) 26%,
+        transparent 26%,
+        transparent 65%,
+        var(--c3) 65%,
+        var(--c3) 66%,
+        transparent 66%,
+        transparent 100%
+      );
+    background-size: calc(24*var(--s)) calc(24*var(--s));
+    animation: textureFloat 45s linear infinite;
+  }
+}
+
+@keyframes textureFloat {
+  0% {
+    background-position: 0 0;
+  }
+  20% {
+    background-position: calc(8*var(--s)) calc(-4*var(--s));
+  }
+  40% {
+    background-position: calc(16*var(--s)) calc(-8*var(--s));
+  }
+  60% {
+    background-position: calc(24*var(--s)) calc(-12*var(--s));
+  }
+  80% {
+    background-position: calc(16*var(--s)) calc(-8*var(--s));
+  }
+  100% {
+    background-position: 0 0;
+  }
+} 

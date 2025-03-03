@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font Configuration */
+@layer base {
+  :root {
+    --font-sans: var(--font-inter);
+  }
+
+  html {
+    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
 /* Minimal Reset */
 * {
   margin: 0;
@@ -9,53 +20,324 @@
   box-sizing: border-box;
 }
 
-/* High Contrast Colors for Accessibility */
+/* Color Palette */
 :root {
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --background: #ffffff;
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
+  /* Primary Colors */
+  --color-dark: #0b090a;
+  --color-accent: #e5383b;
+  --gray-dark: #b1a7a6;
+  --gray-medium: #d3d3d3;
+  --gray-light: #f5f3f4;
+  --color-white: #ffffff;
+
+  /* Semantic Colors */
+  --text-primary: var(--color-dark);
+  --text-secondary: var(--gray-dark);
+  --text-accent: var(--color-accent);
+  --background-primary: var(--color-white);
+  --background-secondary: var(--gray-light);
+  --link-color: var(--color-accent);
+  --link-hover: var(--color-dark);
+
+  /* Font */
+  --font-sans: var(--font-inter);
+
+  /* Layout */
+  --header-height: 4rem;
+  --footer-height: 3rem;
+  --content-width: min(95vw, 90rem);
+  --content-padding: max(1rem, calc((100vw - var(--content-width)) / 2));
+
+  /* Breakpoints (for reference) */
+  --mobile: 320px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --desktop: 1280px;
+  --large: 1536px;
+
+  --accent-color: #e5383b;
+  --dark-color: #0b090a;
 }
 
-/* Minimal Base Styles */
+/* Base Styles */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background);
-  color: var(--text-primary);
+  background-color: var(--background-primary);
+  color: var(--color-dark);
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
 }
 
-/* Responsive Typography */
-html {
-  font-size: 16px;
+/* Layout Styles */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: var(--header-height); /* Space for fixed navigation */
 }
 
+/* Navigation Container */
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background-color: var(--background-primary);
+  z-index: 50;
+  padding: 0 var(--content-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content Sections */
+.section-container {
+  flex: 1;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem var(--content-padding);
+  overflow-y: auto;
+}
+
+/* Full Screen Layout - Only for Homepage */
+.home-layout {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content Container - Modified for Internal Pages */
+.content-container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem var(--content-padding);
+  flex: 1;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* Navigation Styles */
+nav {
+  width: 100%;
+  max-width: var(--content-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+nav a {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+
+/* Section Specific Styles */
+section:first-of-type .content-container {
+  justify-content: space-between;
+}
+
+/* Footer Container */
+footer .content-container {
+  min-height: auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* Mobile First Responsive Design */
+/* Mobile Large (375px and up) */
+@media (min-width: 375px) {
+  .content-container {
+    padding: 1.5rem;
+  }
+  
+  .grid-container {
+    gap: 1.75rem;
+  }
+}
+
+/* Tablet (768px and up) */
 @media (min-width: 768px) {
+  .full-screen-section {
+    padding: 4rem var(--content-padding);
+  }
+
+  .content-container {
+    padding: 2rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  nav {
+    padding: 1.5rem;
+  }
+
+  nav ul {
+    gap: 2.5rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  html {
+    font-size: 17px;
+  }
+}
+
+/* Laptop (1024px and up) */
+@media (min-width: 1024px) {
+  .full-screen-section {
+    padding: 5rem var(--content-padding);
+  }
+
+  .content-container {
+    padding: 2.5rem;
+  }
+
+  .grid-container {
+    gap: 2.5rem;
+  }
+
   html {
     font-size: 18px;
   }
 }
 
-/* Minimal Link Styles */
+/* Desktop (1280px and up) */
+@media (min-width: 1280px) {
+  .full-screen-section {
+    padding: 6rem var(--content-padding);
+  }
+
+  .content-container {
+    padding: 3rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+    gap: 3rem;
+  }
+
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Large Screens (1536px and up) */
+@media (min-width: 1536px) {
+  :root {
+    --content-width: min(90vw, 100rem);
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 32rem), 1fr));
+    gap: 4rem;
+  }
+
+  html {
+    font-size: 20px;
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 { 
+  font-weight: 800;
+  color: var(--color-dark);
+}
+
+h2 { 
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+h3 { 
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+p { 
+  font-weight: 400;
+  color: var(--text-secondary);
+  max-width: 70ch;
+}
+
+/* Link Styles */
 a {
-  color: var(--accent);
-  text-decoration: underline;
+  color: var(--link-color);
+  text-decoration: none;
   text-underline-offset: 0.2em;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  position: relative;
 }
 
 a:hover,
 a:focus {
-  color: var(--accent-hover);
+  color: var(--link-hover);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--link-color);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* Focus Styles for Accessibility */
 :focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+}
+
+/* Selection Styles */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-white);
 }
 
 /* Print Styles */
@@ -68,5 +350,24 @@ a:focus {
   a {
     color: black;
     text-decoration: underline;
+  }
+  
+  .full-screen,
+  .full-screen-section,
+  .content-container {
+    height: auto;
+    min-height: 0;
+    padding: 1rem 0;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  a::after {
+    display: none;
+  }
+  
+  a:active {
+    opacity: 0.7;
   }
 } 
