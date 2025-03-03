@@ -31,3 +31,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+public/projects/becoming/becoming-001.mp4
