@@ -2,16 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Gallery, Thumbnail, MediaItem } from './Gallery';
-
-export interface ProjectData {
-  title: string;
-  description: string;
-  date: string;
-  media: MediaItem[];
-  technologies?: string[];
-  status?: 'In Progress' | 'Completed' | 'Active';
-}
+import { Gallery, Thumbnail } from './Gallery';
+import type { ProjectData } from '../types/media';
 
 interface ProjectProps {
   project: ProjectData;

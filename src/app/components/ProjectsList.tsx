@@ -1,7 +1,8 @@
 "use client";
 
 import React from 'react';
-import Project, { ProjectData } from './Project';
+import Project from './Project';
+import type { ProjectData } from '../types/media';
 
 interface ProjectsListProps {
   projects: ProjectData[];

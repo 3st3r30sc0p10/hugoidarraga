@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionLayout from '../components/SectionLayout';
 import ProjectsList from '../components/ProjectsList';
-import type { ProjectData } from '../components/Project';
+import type { ProjectData } from '../types/media';
 
 const projects: ProjectData[] = [
   {

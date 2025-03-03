@@ -2,14 +2,7 @@
 
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import Image from 'next/image';
-
-export interface MediaItem {
-  type: 'image' | 'video';
-  url: string;
-  thumbnail?: string;
-  title?: string;
-  isExternal?: boolean;
-}
+import type { MediaItem } from '../types/media';
 
 interface GalleryProps {
   items: MediaItem[];
