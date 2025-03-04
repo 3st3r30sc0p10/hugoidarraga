@@ -14,7 +14,7 @@ interface Article {
 const articles: Article[] = [
   {
     title: "Algorithmic Vision and the Dialectic of Visibility",
-    description: "This article proposes to analyze the definition of the human being through the ‘eyes’ of machine learning models dedicated to the recognition and classification of people. For this, the image of a dialectic of surveillance and social control is offered based on the constant visibility of those affected and the invisibility of those who benefit from this system. The algorithmic vision emerges here as a privileged place to exercise this power, but at the same time as the place of vulnerability, from where it is possible to transform this dialectic and the power relations that it determines. The article then proposes a reflection on the different countersurveillance strategies that take advantage of creativity and aesthetic experience to think about other power relations, that is, about other possibilities to think about what a human being is today.",
+    description: "This article proposes to analyze the definition of the human being through the 'eyes' of machine learning models dedicated to the recognition and classification of people. For this, the image of a dialectic of surveillance and social control is offered based on the constant visibility of those affected and the invisibility of those who benefit from this system. The algorithmic vision emerges here as a privileged place to exercise this power, but at the same time as the place of vulnerability, from where it is possible to transform this dialectic and the power relations that it determines. The article then proposes a reflection on the different countersurveillance strategies that take advantage of creativity and aesthetic experience to think about other power relations, that is, about other possibilities to think about what a human being is today.",
     date: "2022",
     category: {
       name: "ISEA2022",
@@ -43,7 +43,7 @@ const articles: Article[] = [
 
 export default function Writing() {
   return (
-    <SectionLayout currentPath="/writing" title="Writing">
+    <SectionLayout title="Writing">
       <p className="mb-8">
         A collection of essays and articles exploring the intersection of technology, society, and critical theory.
       </p>
@@ -53,11 +53,7 @@ export default function Writing() {
           <article key={index} className="border-b border-gray-200 pb-8 last:border-0">
             <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
             <div className="flex items-center text-sm text-gray-500 mb-3">
-              <span>{new Date(article.date).toLocaleDateString('en-US', { 
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}</span>
+              <span>{article.date}</span>
               <span className="mx-2">•</span>
               <a 
                 href={article.category.url}

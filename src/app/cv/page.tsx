@@ -458,7 +458,7 @@ const affiliations: Affiliation[] = [
 
 export default function CV() {
   return (
-    <SectionLayout currentPath="/cv" title="Curriculum Vitae">
+    <SectionLayout title="Curriculum Vitae">
       <p className="mb-8">
         Academic and professional experience in computational media, critical theory, and artificial intelligence.
       </p>

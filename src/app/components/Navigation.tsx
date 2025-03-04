@@ -6,57 +6,52 @@ interface NavigationProps {
   currentPath: string;
 }
 
-export default function Navigation({ currentPath }: NavigationProps) {
+export default function Navigation() {
   return (
-    <div className="nav-container">
-      <nav>
-        <h1 className="text-2xl sm:text-3xl text-dark font-bold">
-          <Link href="/" className="hover:text-accent transition-colors duration-300">
-            hugo idárraga
-          </Link>
-        </h1>
-        
-        <div className="flex items-center space-x-4 md:space-x-6 lg:space-x-8 text-base md:text-lg">
-          <Link 
-            href="/about"
-            className={`${currentPath === '/about' ? 'text-accent' : 'text-dark'} hover:text-accent transition-colors duration-300`}
-          >
-            about
-          </Link>
-          <span className="text-accent opacity-70" aria-hidden="true">⌘</span>
-          
-          <Link 
-            href="/writing"
-            className={`${currentPath === '/writing' ? 'text-accent' : 'text-dark'} hover:text-accent transition-colors duration-300`}
-          >
-            writing
-          </Link>
-          <span className="text-accent opacity-70" aria-hidden="true">⎋</span>
-          
-          <Link 
-            href="/projects"
-            className={`${currentPath === '/projects' ? 'text-accent' : 'text-dark'} hover:text-accent transition-colors duration-300`}
-          >
-            projects
-          </Link>
-          <span className="text-accent opacity-70" aria-hidden="true">⌥</span>
-          
-          <Link 
-            href="/cv"
-            className={`${currentPath === '/cv' ? 'text-accent' : 'text-dark'} hover:text-accent transition-colors duration-300`}
-          >
-            cv
-          </Link>
-          <span className="text-accent opacity-70" aria-hidden="true">⎇</span>
-          
-          <Link 
-            href="/contact"
-            className={`${currentPath === '/contact' ? 'text-accent' : 'text-dark'} hover:text-accent transition-colors duration-300`}
-          >
-            contact
-          </Link>
+    <nav className="sticky top-0 z-50 border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          <div className="flex">
+            <div className="flex-shrink-0 flex items-center">
+              <Link href="/" className="text-xl font-bold text-gray-900">
+                hugo idarraga
+              </Link>
+            </div>
+            <div className="hidden sm:ml-12 sm:flex sm:space-x-8">
+              <Link
+                href="/about"
+                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              >
+                about
+              </Link>
+              <Link
+                href="/projects"
+                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              >
+                projects
+              </Link>
+              <Link
+                href="/writing"
+                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              >
+                writing
+              </Link>
+              <Link
+                href="/cv"
+                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              >
+                cv
+              </Link>
+              <Link
+                href="/contact"
+                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              >
+                contact
+              </Link>
+            </div>
+          </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 } 

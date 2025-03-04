@@ -52,14 +52,4 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-  // Reduce the file size by removing unused utilities
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      './src/**/*.{js,ts,jsx,tsx,mdx}',
-    ],
-    options: {
-      safelist: [],
-    },
-  },
 } 
