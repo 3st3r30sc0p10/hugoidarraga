@@ -41,7 +41,7 @@ const projects = [
       },
       {
         type: 'image',
-        url: '/projects/fugitive-traces/fugitive-002.jpg',
+        url: '/projects/fugitive-traces/fugitive-002.png',
         title: 'Amerindian Becoming'
       }
     ]
