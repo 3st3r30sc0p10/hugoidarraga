@@ -36,12 +36,12 @@ const projects = [
     media: [
       {
         type: 'image',
-        url: '/projects/fugitive/fugitive-001.jpg',
+        url: '/projects/fugitive-traces/fugitive-001.jpg',
         title: 'Amerindian Becoming'
       },
       {
         type: 'image',
-        url: '/projects/fugitive/fugitive-002.jpg',
+        url: '/projects/fugitive-traces/fugitive-002.jpg',
         title: 'Amerindian Becoming'
       }
     ]
