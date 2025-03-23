@@ -11,10 +11,10 @@ export default function HomeContent() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4 text-lg text-gray-700">
               <p>
-                Hugo F. Idárraga is a third-year PhD student in the Computational Media, Arts, and Cultures program at Duke University. His research interests lie at the intersection of critical machine learning studies, media theory, and adversarial technologies.
+              Hugo F. Idárraga is a third-year PhD student in the Computational Media, Arts, and Cultures program at Duke University. His research interests lie at the intersection of critical machine learning studies, media theory, and adversarial technologies.
               </p>
               <p>
-                Hugo investigates the political dimensions of artificial neural networks in data classification. His current work explores how contemporary deep learning models may reproduce colonial structures rooted in racial ideologies, while also examining the potential of these technologies to foster critical engagement in politics and art.
+              Hugo investigates the critical dimensions of artificial neural networks in data classification. His current work explores how data classification functions in contemporary deep learning models, while also examining the potential of these technologies to foster artistic and aesthetic engagements with algorithmic systems.
               </p>
             </div>
             <div className="relative rounded-lg overflow-hidden shadow-lg">
